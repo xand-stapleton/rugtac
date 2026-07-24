@@ -13,18 +13,41 @@ description independently.
 
 ## Compiling and Running
 
-Step 0. Ensure you have an up-to-date Go installation, e.g. from [here](https://go.dev/dl/).
+_Ensure you have an up-to-date Go installation, e.g. from [here](https://go.dev/dl/)._
 
 
 
 ### Building and Installing (Recommended)
-Or use the Makefile:
+Use the Makefile to build the program, build the index, and perform a self-test.
 
+tldr;
 ```sh
 make build
-make check
 make index
+make check
 ```
+
+To install both the executable and its local index for your user:
+
+```sh
+make install
+```
+
+This defaults to `~/.local/bin/rugtac` and
+`~/.local/share/rugtac/tactics.json`. Ensure `~/.local/bin` is on `PATH`.
+Override the prefix when needed:
+
+```sh
+make install PREFIX=/usr/local
+```
+
+To remove the installed binary and index:
+
+```sh
+make uninstall
+```
+
+Use the same `PREFIX` supplied during installation when overriding the default.
 
 ### Running on-the-fly
 To use Go's interpreted-language like mode:
@@ -57,35 +80,6 @@ or inside the TUI with Charm's Bubble Tea:
 
 The interface uses a small ANSI colour palette without another UI dependency.
 Set [`NO_COLOR`](https://no-color.org/) to disable it.
-
-To build the binary:
-
-```sh
-go build -o rugtac ./bin/rugtac
-./rugtac
-```
-
-To install both the executable and its local index for your user:
-
-```sh
-make install
-```
-
-This defaults to `~/.local/bin/rugtac` and
-`~/.local/share/rugtac/tactics.json`. Ensure `~/.local/bin` is on `PATH`.
-Override the prefix when needed:
-
-```sh
-make install PREFIX=/usr/local
-```
-
-To remove the installed binary and index:
-
-```sh
-make uninstall
-```
-
-Use the same `PREFIX` supplied during installation when overriding the default.
 
 ## Refresh the tactic index
 
