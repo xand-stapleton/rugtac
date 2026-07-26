@@ -155,4 +155,4 @@ all tests with `go test ./...`.
 
 ### Naming
 
-The naming of Rugtac was rather silly. I wanted a unique name which was descriptive and memorable. Rugtac is a _fuzzy_ finder, rugs are _fuzzy_, and tac is simply a shortening on _tactic_.
+The naming of Rugtac was rather silly. I wanted a unique name which was descriptive and memorable. Rugtac is a _fuzzy_ finder, rugs are _fuzzy_, and tac is simply a shortening of _tactic_.
