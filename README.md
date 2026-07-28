@@ -1,4 +1,6 @@
-# RugTac
+<h1 align="center">
+  <img src="img/logo.svg" alt="Goblocks logo" width=286>
+</h1>
 
 `rugtac` is a tiny, local fuzzy searcher for mathlib and Lean
 tactics described on the [Lean Community Tactics List](https://leanprover-community.github.io/mathlib4_docs/tactics.html).
