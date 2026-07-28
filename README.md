@@ -1,4 +1,4 @@
-# rugtac
+# RugTac
 
 `rugtac` is a tiny, local fuzzy searcher for mathlib and Lean
 tactics described on the [Lean Community Tactics List](https://leanprover-community.github.io/mathlib4_docs/tactics.html).
