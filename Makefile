@@ -22,11 +22,11 @@ help:
 	@echo "  make clean              remove the built binary"
 
 build:
-	$(GO) build -o $(BINARY) ./bin/rugtac
+	$(GO) build -o $(BINARY) ./cmd/rugtac
 
 install:
-	$(INSTALL) -d "$(DESTDIR)$(PREFIX)/bin" "$(DESTDIR)$(PREFIX)/share/rugtac"
-	$(GO) build -o "$(DESTDIR)$(PREFIX)/bin/$(BINARY)" ./bin/rugtac
+	$(INSTALL) -d "$(DESTDIR)$(PREFIX)/cmd" "$(DESTDIR)$(PREFIX)/share/rugtac"
+	$(GO) build -o "$(DESTDIR)$(PREFIX)/bin/$(BINARY)" ./cmd/rugtac
 	$(INSTALL) -m 0644 data/tactics.json "$(DESTDIR)$(PREFIX)/share/rugtac/tactics.json"
 
 uninstall:
@@ -35,10 +35,10 @@ uninstall:
 	-rmdir "$(DESTDIR)$(PREFIX)/share/rugtac"
 
 run:
-	$(GO) run ./bin/rugtac $(FLAGS) -- $(ARGS)
+	$(GO) run ./cmd/rugtac $(FLAGS) -- $(ARGS)
 
 index:
-	$(GO) run ./bin/rugtac-index
+	$(GO) run ./cmd/rugtac-index
 
 test:
 	$(GO) test ./...
