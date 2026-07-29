@@ -98,12 +98,12 @@ func (m Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 				m.cursor++
 				m.detail = 0
 			}
-		case "pgup":
+		case "pgup", "ctrl+b":
 			m.detail -= 5
 			if m.detail < 0 {
 				m.detail = 0
 			}
-		case "pgdown":
+		case "pgdown", "ctrl+f":
 			m.detail += 5
 			if maximum := m.maxDetailOffset(); m.detail > maximum {
 				m.detail = maximum
@@ -318,7 +318,7 @@ func (m Model) View() tea.View {
 	}
 
 	b.WriteString("\n")
-	b.WriteString(m.paint("2", "tab scope • enter choose library • ↑/↓ select • pgup/pgdn docs • esc quit"))
+	b.WriteString(m.paint("2", "tab scope • enter choose library • ↑/↓ select • pgup/C-b pgdn/C-f docs • esc quit"))
 	return tea.NewView(b.String())
 }
 
